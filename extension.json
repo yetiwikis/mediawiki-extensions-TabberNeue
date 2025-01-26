@@ -1,6 +1,6 @@
 {
 	"name": "TabberNeue",
-	"version": "2.4.0",
+	"version": "2.7.3",
 	"author": [
 		"alistair3149",
 		"Eric Fortin",
@@ -43,11 +43,9 @@
 					"name": "ext.tabberNeue/config.json",
 					"config": {
 						"enableAnimation": "TabberNeueEnableAnimation",
-						"parseTabName": "TabberNeueParseTabName",
 						"updateLocationOnTabChange": "TabberNeueUpdateLocationOnTabChange"
 					}
 				},
-				"ext.tabberNeue/Hash.js",
 				"ext.tabberNeue/Transclude.js",
 				"ext.tabberNeue/Util.js"
 			],
@@ -61,25 +59,6 @@
 				"ext.tabberNeue/ext.tabberNeue.mobile.less"
 			],
 			"dependencies": [
-				"mediawiki.Uri",
-				"mediawiki.util"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
-		"ext.tabberNeue.codex": {
-			"packageFiles": [
-				"ext.tabberNeue.codex/ext.tabberNeue.codex.js",
-				"ext.tabberNeue.codex/App.vue",
-				"ext.tabberNeue.codex/TabContent.vue"
-			],
-			"styles": [
-				"ext.tabberNeue.codex/ext.tabberNeue.codex.less"
-			],
-			"dependencies": [
-				"@wikimedia/codex",
 				"mediawiki.util"
 			],
 			"targets": [
@@ -148,11 +127,6 @@
 			"description": "Parse tab name as wikitext. This can have a performance impact and cause unexpected behaviors.",
 			"public": true
 		},
-		"TabberNeueUseCodex": {
-			"value": false,
-			"description": "Use Codex to render Tabber. It is experimental and many features might not work as expected.",
-			"public": true
-		},
 		"TabberNeueEnableAnimation": {
 			"value": true,
 			"description": "Enable or disable smooth scroll animation",
@@ -161,6 +135,11 @@
 		"TabberNeueUpdateLocationOnTabChange": {
 			"value": true,
 			"description": "If enabled, when a tab is selected, the URL displayed on the browser changes. Opening this URL makes that tab initially selected.",
+			"public": true
+		},
+		"TabberNeueUseLegacyTabIds": {
+			"value": false,
+			"description": "If enabled, tabpanel IDs will not be prepended with \"tabber-tabpanel-\". This provides better compatibility with the old Tabber extension, but will cause issues if there are headings with the same name as an existing tab.",
 			"public": true
 		}
 	},
